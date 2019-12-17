@@ -19,7 +19,7 @@ class PodcastCell: UITableViewCell {
         podcastName.text = podcast.collectionName
         artistLabel.text = podcast.artistName
         primaryGenreLabel.text = podcast.primaryGenreName
-        podcastImage.getImage(with: podcast.artworkUrl100) { [weak self] (result) in
+        podcastImage.getImage(with: podcast.artworkUrl100!) { [weak self] (result) in
             switch result {
             case .failure:
                 DispatchQueue.main.sync {

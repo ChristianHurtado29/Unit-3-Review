@@ -21,4 +21,5 @@ struct Podcast: Codable {
     let primaryGenreName: String?
     let genres: [String]?
     let favoritedBy: String?
+    let trackId: Int
 }

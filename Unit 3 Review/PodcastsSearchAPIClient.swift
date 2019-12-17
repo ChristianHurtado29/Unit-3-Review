@@ -74,4 +74,39 @@ struct PodcastsSearchAPIClient  {
                     completion(.failure(.encodingError(error)))
                 }
             }
-    }
+    
+    static func getId(for trackId: Int,
+                      completion: @escaping(Result <[Podcast], AppError>) -> ()) {
+        let idEndpointUrl = ""
+        
+        guard let url = URL(string: idEndpointUrl) else {
+            completion(.failure(.badURL(idEndpointUrl)))
+            
+            return
+        }
+        let request = URLRequest(url: url)
+        
+        NetworkHelper.shared.performDataTask(with: request) { (result) in
+            switch result {
+            case .failure(let appError):
+                completion(.failure(.networkClientError(appError)))
+            case .success(let data):
+                print("Yay!")
+          //      completion(.success([Podcast]))
+            }
+        }
+}
+    
+    
+    
+//
+//    static func getFaves(for trackId: Int,
+//                         completion: @escaping (Result <[Podcast], AppError>) -> ()) {
+//
+//        let favesEndpointURL = "https://5c2e2a592fffe80014bd6904.mockapi.io/api/v1/favorite"
+//
+//    }
+//
+//
+//    }
+}
