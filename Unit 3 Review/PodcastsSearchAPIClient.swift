@@ -35,7 +35,6 @@ struct PodcastsSearchAPIClient  {
                     let podcasts = searchResults.results
                     
                     completion(.success(podcasts))
-                    
                 } catch {
                 }
             }
