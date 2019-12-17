@@ -14,6 +14,7 @@ enum AppError: Error {
   case networkClientError(Error) // no internet connection
   case noData
   case decodingError(Error)
+  case encodingError(Error)
   case badStatusCode(Int) // 404, 500
   case badMimeType(String) // image/jpg
 }
