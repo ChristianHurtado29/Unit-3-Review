@@ -28,12 +28,20 @@ class PodcastVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         loadData(for: "swift")
         searchBar.delegate = self
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let detailedPodcastVC = segue.destination as? DetailedPodcastVC,
+        let indexPath = tableView.indexPathForSelectedRow else {
+            fatalError("could not segue properly")
+        }
+        let podcast = podcasts[indexPath.row]
+        detailedPodcastVC.podcast = podcast
     }
     
     func loadData(for search: String) {

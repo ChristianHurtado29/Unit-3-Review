@@ -10,8 +10,6 @@ import UIKit
 
 class PodcastCell: UITableViewCell {
     
-    
-    
     @IBOutlet weak var podcastName: UILabel!
     @IBOutlet weak var podcastImage: UIImageView!
     @IBOutlet weak var artistLabel: UILabel!
