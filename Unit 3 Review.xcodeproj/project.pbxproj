@@ -18,6 +18,8 @@
 		13211E8923A930DE003F7939 /* DetailedPodcastVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13211E8823A930DE003F7939 /* DetailedPodcastVC.swift */; };
 		13211E8B23A932E3003F7939 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13211E8A23A932E3003F7939 /* NetworkHelper.swift */; };
 		13211E8D23A932F6003F7939 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13211E8C23A932F6003F7939 /* AppError.swift */; };
+		13211E8F23A934F5003F7939 /* PodcastsAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13211E8E23A934F5003F7939 /* PodcastsAPIClient.swift */; };
+		13211E9123A93575003F7939 /* Podcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13211E9023A93575003F7939 /* Podcast.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 		13211E8823A930DE003F7939 /* DetailedPodcastVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedPodcastVC.swift; sourceTree = "<group>"; };
 		13211E8A23A932E3003F7939 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
 		13211E8C23A932F6003F7939 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		13211E8E23A934F5003F7939 /* PodcastsAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastsAPIClient.swift; sourceTree = "<group>"; };
+		13211E9023A93575003F7939 /* Podcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Podcast.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,8 @@
 			isa = PBXGroup;
 			children = (
 				13211E6423A843DC003F7939 /* AppDelegate.swift */,
+				13211E8E23A934F5003F7939 /* PodcastsAPIClient.swift */,
+				13211E9023A93575003F7939 /* Podcast.swift */,
 				13211E8C23A932F6003F7939 /* AppError.swift */,
 				13211E6623A843DC003F7939 /* SceneDelegate.swift */,
 				13211E6823A843DC003F7939 /* PodcastVC.swift */,
@@ -216,6 +222,8 @@
 				13211E8923A930DE003F7939 /* DetailedPodcastVC.swift in Sources */,
 				13211E6523A843DC003F7939 /* AppDelegate.swift in Sources */,
 				13211E8723A847BB003F7939 /* PodcastCell.swift in Sources */,
+				13211E8F23A934F5003F7939 /* PodcastsAPIClient.swift in Sources */,
+				13211E9123A93575003F7939 /* Podcast.swift in Sources */,
 				13211E8B23A932E3003F7939 /* NetworkHelper.swift in Sources */,
 				13211E6723A843DC003F7939 /* SceneDelegate.swift in Sources */,
 				13211E8D23A932F6003F7939 /* AppError.swift in Sources */,
