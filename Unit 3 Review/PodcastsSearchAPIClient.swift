@@ -41,10 +41,8 @@ struct PodcastsSearchAPIClient  {
         }
     }
     
-    static func postFave (postFave: Favorites,
+    static func postFave (postFave: Podcast,
                           completion: @escaping (Result<Bool, AppError>) -> ()) {
-        
-        
         let faveEndpointURL = "https://5c2e2a592fffe80014bd6904.mockapi.io/api/v1/favorites"
         
         guard let url = URL(string: faveEndpointURL) else {
@@ -75,9 +73,9 @@ struct PodcastsSearchAPIClient  {
                 }
             }
     
-    static func getId(for trackId: Int,
+    static func getFaves(for faves: [Podcast],
                       completion: @escaping(Result <[Podcast], AppError>) -> ()) {
-        let idEndpointUrl = ""
+        let idEndpointUrl = "https://5c2e2a592fffe80014bd6904.mockapi.io/api/v1/favorites"
         
         guard let url = URL(string: idEndpointUrl) else {
             completion(.failure(.badURL(idEndpointUrl)))
@@ -91,8 +89,12 @@ struct PodcastsSearchAPIClient  {
             case .failure(let appError):
                 completion(.failure(.networkClientError(appError)))
             case .success(let data):
-                print("Yay!")
-          //      completion(.success([Podcast]))
+                do {
+                    let faves = try JSONDecoder().decode([Podcast].self, from: data)
+                    
+                    completion(.success(faves))
+                } catch {
+                }
             }
         }
 }

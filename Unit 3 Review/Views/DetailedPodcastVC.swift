@@ -23,12 +23,17 @@ class DetailedPodcastVC: UIViewController {
         super.viewDidLoad()
         podcastLabel.text = podcast?.collectionName
         podcastArtist.text = podcast?.artistName
-        podcastGenre.text = podcast?.genres!.joined()
-        podcastImage.getImage(with: podcast!.artworkUrl100!) { [weak self] (result) in
+        podcastGenre.text = podcast?.genres?.joined()
+        
+        guard let imageURL = podcast?.artworkUrl100 else {
+            podcastImage.image = UIImage(systemName: "mic.fill")
+            return
+        }
+        podcastImage.getImage(with: imageURL) { [weak self] (result) in
             switch result {
             case .failure:
                 DispatchQueue.main.sync {
-                    self?.podcastImage.image = UIImage(systemName: "person.fill")
+                    self?.podcastImage.image = UIImage(systemName: "mic.fill")
                 }
             case .success(let image):
                 DispatchQueue.main.sync {
@@ -41,9 +46,7 @@ class DetailedPodcastVC: UIViewController {
     
     @IBAction func favoritedButton(_ sender: UIBarButtonItem) {
         
-        let favorite = Favorites(collectionName: podcast!.collectionName,
-                                 artworkUrl600: podcast!.artworkUrl600,
-                                 favoritedBy: "Christian Hurtado")
+        let favorite = Podcast(artistName: nil, collectionName: podcast!.collectionName, trackName: podcast?.trackName, artworkUrl100: podcast?.artworkUrl100, artworkUrl600: podcast!.artworkUrl600, primaryGenreName: podcast?.primaryGenreName, genres: podcast?.genres, favoritedBy: podcast?.favoritedBy, trackId: podcast!.trackId)
         
         PodcastsSearchAPIClient.postFave(postFave: favorite) { [weak self, weak sender ] result in
             switch result {

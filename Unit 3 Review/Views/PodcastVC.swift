@@ -31,6 +31,7 @@ class PodcastVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
+        tableView.delegate = self
         loadData(for: "swift")
         searchBar.delegate = self
     }
@@ -85,5 +86,11 @@ extension PodcastVC: UISearchBarDelegate{
             searchQuery = "swift"
         }
         loadData(for: "\(searchQuery)")
+    }
+}
+
+extension PodcastVC: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120
     }
 }

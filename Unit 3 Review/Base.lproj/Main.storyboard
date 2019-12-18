@@ -185,10 +185,10 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="114.50892857142857"/>
         </scene>
-        <!--View Controller-->
+        <!--FavesVC-->
         <scene sceneID="MNC-GT-ajm">
             <objects>
-                <viewController id="AMI-m1-Uye" sceneMemberID="viewController">
+                <viewController id="AMI-m1-Uye" customClass="FavesVC" customModule="Unit_3_Review" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PUx-U3-Ufa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -197,7 +197,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DetailPodcastLabel" rowHeight="152" id="c5Z-ED-EPd">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FavesCell" rowHeight="152" id="c5Z-ED-EPd" customClass="PodcastCell" customModule="Unit_3_Review" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="152"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="c5Z-ED-EPd" id="jjZ-sy-Lsh">
@@ -241,7 +241,11 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="d0J-JM-Nmc" kind="show" identifier="detailedSegue" trigger="accessoryAction" id="U8V-9y-EgJ"/>
+                                            <outlet property="artistLabel" destination="8pk-7M-tV8" id="Pzi-xw-WcL"/>
+                                            <outlet property="podcastImage" destination="tuI-VX-RxE" id="YmX-Rn-OMJ"/>
+                                            <outlet property="podcastName" destination="R1O-qn-lZj" id="7p8-6c-x2r"/>
+                                            <outlet property="primaryGenreLabel" destination="sV5-PR-VA8" id="IgN-tU-OgQ"/>
+                                            <segue destination="d0J-JM-Nmc" kind="show" id="8wf-jA-Otb"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -257,6 +261,9 @@
                         <viewLayoutGuide key="safeArea" id="hx5-u8-FR0"/>
                     </view>
                     <navigationItem key="navigationItem" id="ljW-sF-12P"/>
+                    <connections>
+                        <outlet property="tableView" destination="xvL-oN-5fw" id="yXO-pX-w1c"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cDt-lt-Xy3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -266,7 +273,7 @@
         <scene sceneID="laK-AX-n79">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cJF-q3-cV0" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="8Jq-rZ-haf"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="mic.fill" catalog="system" id="8Jq-rZ-haf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BBq-Ti-Mx4">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -285,7 +292,7 @@
         <scene sceneID="58O-0G-r9e">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Vpn-kS-npM" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="oD1-z1-102"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="heart.fill" catalog="system" id="oD1-z1-102"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Zqf-du-a0z">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -302,9 +309,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="heart.fill" catalog="system" width="64" height="54"/>
+        <image name="mic.fill" catalog="system" width="54" height="64"/>
         <image name="suit.heart" catalog="system" width="64" height="54"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="U8V-9y-EgJ"/>
+        <segue reference="8wf-jA-Otb"/>
     </inferredMetricsTieBreakers>
 </document>

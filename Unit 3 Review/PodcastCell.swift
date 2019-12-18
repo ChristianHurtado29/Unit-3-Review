@@ -16,10 +16,17 @@ class PodcastCell: UITableViewCell {
     @IBOutlet weak var primaryGenreLabel: UILabel!
     
     func configureCell(for podcast: Podcast) {
-        podcastName.text = podcast.collectionName
-        artistLabel.text = podcast.artistName
-        primaryGenreLabel.text = podcast.primaryGenreName
-        podcastImage.getImage(with: podcast.artworkUrl100!) { [weak self] (result) in
+        podcastName?.text = podcast.collectionName
+        artistLabel?.text = podcast.artistName
+        primaryGenreLabel?.text = podcast.primaryGenreName
+        
+        // configure image view
+        guard let imageURL = podcast.artworkUrl100 else {
+            podcastImage.image = UIImage(systemName: "mic.fill")
+            return
+        }
+        
+        podcastImage?.getImage(with: imageURL) { [weak self] (result) in
             switch result {
             case .failure:
                 DispatchQueue.main.sync {
