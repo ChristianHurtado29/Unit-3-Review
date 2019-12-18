@@ -21,7 +21,6 @@
 		13211E8F23A934F5003F7939 /* PodcastsSearchAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13211E8E23A934F5003F7939 /* PodcastsSearchAPIClient.swift */; };
 		13211E9123A93575003F7939 /* Podcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13211E9023A93575003F7939 /* Podcast.swift */; };
 		13AD929423A94E2E00865410 /* UIImageView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AD929323A94E2E00865410 /* UIImageView + Extension.swift */; };
-		13AD929823A9737E00865410 /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AD929723A9737E00865410 /* Favorites.swift */; };
 		13B0A9E023A97EAE0059CDDD /* UIViewController + Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B0A9DF23A97EAE0059CDDD /* UIViewController + Alerts.swift */; };
 		13B0A9E223A98BD50059CDDD /* FavesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B0A9E123A98BD50059CDDD /* FavesVC.swift */; };
 /* End PBXBuildFile section */
@@ -55,7 +54,6 @@
 		13211E8E23A934F5003F7939 /* PodcastsSearchAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastsSearchAPIClient.swift; sourceTree = "<group>"; };
 		13211E9023A93575003F7939 /* Podcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Podcast.swift; sourceTree = "<group>"; };
 		13AD929323A94E2E00865410 /* UIImageView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView + Extension.swift"; sourceTree = "<group>"; };
-		13AD929723A9737E00865410 /* Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
 		13B0A9DF23A97EAE0059CDDD /* UIViewController + Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Alerts.swift"; sourceTree = "<group>"; };
 		13B0A9E123A98BD50059CDDD /* FavesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavesVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -130,7 +128,6 @@
 			children = (
 				13211E8C23A932F6003F7939 /* AppError.swift */,
 				13211E9023A93575003F7939 /* Podcast.swift */,
-				13AD929723A9737E00865410 /* Favorites.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -252,7 +249,6 @@
 				13211E8723A847BB003F7939 /* PodcastCell.swift in Sources */,
 				13AD929423A94E2E00865410 /* UIImageView + Extension.swift in Sources */,
 				13B0A9E023A97EAE0059CDDD /* UIViewController + Alerts.swift in Sources */,
-				13AD929823A9737E00865410 /* Favorites.swift in Sources */,
 				13211E8F23A934F5003F7939 /* PodcastsSearchAPIClient.swift in Sources */,
 				13211E9123A93575003F7939 /* Podcast.swift in Sources */,
 				13B0A9E223A98BD50059CDDD /* FavesVC.swift in Sources */,

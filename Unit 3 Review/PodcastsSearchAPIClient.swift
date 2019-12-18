@@ -36,6 +36,7 @@ struct PodcastsSearchAPIClient  {
                     
                     completion(.success(podcasts))
                 } catch {
+                    // completion missing does it work without it ??
                 }
             }
         }
@@ -48,7 +49,7 @@ struct PodcastsSearchAPIClient  {
         guard let url = URL(string: faveEndpointURL) else {
             return
         }
-        
+        //MARK: converting to data
         do {
         let data = try JSONEncoder().encode(postFave)
             
@@ -98,17 +99,4 @@ struct PodcastsSearchAPIClient  {
             }
         }
 }
-    
-    
-    
-//
-//    static func getFaves(for trackId: Int,
-//                         completion: @escaping (Result <[Podcast], AppError>) -> ()) {
-//
-//        let favesEndpointURL = "https://5c2e2a592fffe80014bd6904.mockapi.io/api/v1/favorite"
-//
-//    }
-//
-//
-//    }
 }

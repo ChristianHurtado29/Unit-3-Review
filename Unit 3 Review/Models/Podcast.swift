@@ -13,7 +13,7 @@ struct PodcastSearch: Codable {
 }
 
 struct Podcast: Codable {
-    let artistName: String?
+    var artistName: String?
     let collectionName: String
     let trackName: String?
     let artworkUrl100: String?

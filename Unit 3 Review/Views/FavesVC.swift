@@ -36,6 +36,7 @@ class FavesVC: UIViewController {
         }
         let faves = favorites[indexPath.row]
         detailedPodcastVC.podcast = faves
+        detailedPodcastVC.podcast?.artistName = faves.favoritedBy
     }
     
     
@@ -45,13 +46,11 @@ class FavesVC: UIViewController {
             case .failure(let appError):
                 print("Error \(appError)")
             case .success(let podcast):
-                self?.favorites = podcast.sorted {$0.collectionName <  $1.collectionName}
+                self?.favorites = podcast.sorted {$0.collectionName < $1.collectionName}
             }
         }
     }
-    
 }
-    
     extension FavesVC: UITableViewDataSource {
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             favorites.count
@@ -62,7 +61,6 @@ class FavesVC: UIViewController {
             
             let selFave = favorites[indexPath.row]
             cell.configureCell(for: selFave)
-            
             return cell
         }
 }
